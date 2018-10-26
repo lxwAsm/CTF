@@ -9,3 +9,10 @@ for i in s:
     for j in "main":
         i=i^ord(j)
     print(chr(i),end="")
+    
+# CRACKME.ZIP writeup
+name = "NNNN" 名字必须是大写
+s = 0
+for i in name:
+    s+=ord(i)
+print(i^0x5678^0x1234);
