@@ -15,11 +15,9 @@ name = "NNNN" 名字必须是大写
 s = 0  
 for i in name:  
     s+=ord(i)  
-print(i^0x5678^0x1234);  
+print(i^0x5678^0x1234);
 
-
-#Pusillus.exe Writeup
-
+# Pusillus.exe Writeup  
 flag =[0x71, 0x18, 0x59, 0x1B, 0x79, 0x42, 0x45, 0x4C]  
 for i in range(0,len(flag)):  
     flag[i]^=0x32  
