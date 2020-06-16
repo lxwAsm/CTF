@@ -36,43 +36,43 @@ int	namesize = 5;
 char	buffer[100] = { 0 };  
 int i = 0;  
 do {  
-&nbsp；&nbsp；&nbsp；&nbsp；char cVar5 = (namebuf[i] ^ 0x29) + namesize;  
-&nbsp；&nbsp；&nbsp；&nbsp；if ((cVar5 < 'A') || ('Z' < cVar5)) {  
-&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；cVar5 = namesize + 'R';  
-&nbsp；&nbsp；&nbsp；&nbsp；}  
-&nbsp；&nbsp；&nbsp；&nbsp；buffer[i] = cVar5;  
-&nbsp；&nbsp；&nbsp；&nbsp；(buffer+1)[i] = 0;  
-&nbsp；&nbsp；&nbsp；&nbsp；i = i + 1;  
-&nbsp；&nbsp；&nbsp；&nbsp；namesize = namesize-1;  
+&nbsp;&nbsp;&nbsp;&nbsp;char cVar5 = (namebuf[i] ^ 0x29) + namesize;  
+&nbsp;&nbsp;&nbsp;&nbsp;if ((cVar5 < 'A') || ('Z' < cVar5)) {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cVar5 = namesize + 'R';  
+&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;buffer[i] = cVar5;  
+&nbsp;&nbsp;&nbsp;&nbsp;(buffer+1)[i] = 0;  
+&nbsp;&nbsp;&nbsp;&nbsp;i = i + 1;  
+&nbsp;&nbsp;&nbsp;&nbsp;namesize = namesize-1;  
 } while (namesize != 0);  
 i = 0;  
 namesize = 5;  
 do {  
-&nbsp；&nbsp；&nbsp；&nbsp；char cVar5 = (namebuf[i] ^ 0x27) + namesize + 1;  
-&nbsp；&nbsp；&nbsp；&nbsp；if ((cVar5 < 'A') || ('Z' < cVar5)) {  
-&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；cVar5 = namesize + 'M';   
-&nbsp；&nbsp；&nbsp；&nbsp；}  
-&nbsp；&nbsp；&nbsp；&nbsp；(buffer+5)[i] = cVar5;  
-&nbsp；&nbsp；&nbsp；&nbsp；(buffer+6)[i] = 0;  
-&nbsp；&nbsp；&nbsp；&nbsp；i = i + 1;  
-&nbsp；&nbsp；&nbsp；&nbsp；namesize = namesize + -1;  
+&nbsp;&nbsp;&nbsp;&nbsp;char cVar5 = (namebuf[i] ^ 0x27) + namesize + 1;  
+&nbsp;&nbsp;&nbsp;&nbsp;if ((cVar5 < 'A') || ('Z' < cVar5)) {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cVar5 = namesize + 'M';   
+&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;(buffer+5)[i] = cVar5;  
+&nbsp;&nbsp;&nbsp;&nbsp;(buffer+6)[i] = 0;  
+&nbsp;&nbsp;&nbsp;&nbsp;i = i + 1;  
+&nbsp;&nbsp;&nbsp;&nbsp;namesize = namesize + -1;  
 } while (namesize != 0);  
 int j = 0;  
 for (int j = 0; buffer[j] != 0; j++){  
-&nbsp；&nbsp；&nbsp；&nbsp；char cipher = buffer[j] + 5;  
-&nbsp；&nbsp；&nbsp；&nbsp；if ('Z' < (char)cipher) {  
-&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；cipher = (buffer)[j] - 8;  
-&nbsp；&nbsp；&nbsp；&nbsp；}  
-&nbsp；&nbsp；&nbsp；&nbsp；cipher = cipher ^ 0xc;  
-&nbsp；&nbsp；&nbsp；&nbsp；if ((char)cipher < 'A') {  
-&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；cipher = (char)j + 0x4b;  
-&nbsp；&nbsp；&nbsp；&nbsp；}  
-&nbsp；&nbsp；&nbsp；&nbsp；else {  
-&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；if ('Z' < (char)cipher) {  
-&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；cipher = 0x4b - (char)j;  
-&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；&nbsp；}  
-&nbsp；&nbsp；&nbsp；&nbsp；}  
-&nbsp；&nbsp；&nbsp；&nbsp；printf("%c", cipher);  
+&nbsp;&nbsp;&nbsp;&nbsp;char cipher = buffer[j] + 5;  
+&nbsp;&nbsp;&nbsp;&nbsp;if ('Z' < (char)cipher) {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cipher = (buffer)[j] - 8;  
+&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;cipher = cipher ^ 0xc;  
+&nbsp;&nbsp;&nbsp;&nbsp;if ((char)cipher < 'A') {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cipher = (char)j + 0x4b;  
+&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;else {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ('Z' < (char)cipher) {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cipher = 0x4b - (char)j;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;printf("%c", cipher);  
 }  
 printf("\ndone");  
 system("pause");  
