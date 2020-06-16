@@ -1,7 +1,7 @@
 # CTF
 some collecte ctf exercises including re,misc,crypto,web  
-!(CTF wiki)[https://wiki.x10sec.org/]  
-!(博客)[https://blog.csdn.net/CosmopolitanMe]  
+[CTF wiki](https://wiki.x10sec.org/)  
+[博客](https://blog.csdn.net/CosmopolitanMe)    
 
 
 # crackme1.exe writeup  
