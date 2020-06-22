@@ -82,16 +82,16 @@ system("pause");
 
 ### CrackHead.exe
 DWORD	init_key(){  
-	unsigned int type;  
-	unsigned __int8 v1,v2;  
-	char	VolumeNameBuffer[100] = { 0 };  
-	type = GetDriveTypeA(0);  
-	GetVolumeInformationA(0, VolumeNameBuffer, 100, 0, 0, 0, 0, 0);  
-	v1 = (unsigned __int8)type;  
-	v2 = 0;  
-	do  
-		v2 += *(DWORD *)VolumeNameBuffer * v1--;  
-	while (v1);  
-	*(DWORD *)VolumeNameBuffer = v2;  
-	return v2 ^ 2038068563;  
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned int type;  
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned __int8 v1,v2;  
+&nbsp;&nbsp;&nbsp;&nbsp;char	VolumeNameBuffer[100] = { 0 };  
+&nbsp;&nbsp;&nbsp;&nbsp;type = GetDriveTypeA(0);  
+&nbsp;&nbsp;&nbsp;&nbsp;GetVolumeInformationA(0, VolumeNameBuffer, 100, 0, 0, 0, 0, 0);  
+&nbsp;&nbsp;&nbsp;&nbsp;v1 = (unsigned __int8)type;  
+&nbsp;&nbsp;&nbsp;&nbsp;v2 = 0;  
+&nbsp;&nbsp;&nbsp;&nbsp;do  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v2 += *(DWORD *)VolumeNameBuffer * v1--;  
+&nbsp;&nbsp;&nbsp;&nbsp;while (v1);  
+&nbsp;&nbsp;&nbsp;&nbsp;*(DWORD *)VolumeNameBuffer = v2;  
+&nbsp;&nbsp;&nbsp;&nbsp;return v2 ^ 2038068563;  
 }  
