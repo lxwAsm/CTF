@@ -79,3 +79,19 @@ for (int j = 0; buffer[j] != 0; j++){
 }  
 printf("\ndone");  
 system("pause");  
+
+### CrackHead.exe
+DWORD	init_key(){  
+	unsigned int type;  
+	unsigned __int8 v1,v2;  
+	char	VolumeNameBuffer[100] = { 0 };  
+	type = GetDriveTypeA(0);  
+	GetVolumeInformationA(0, VolumeNameBuffer, 100, 0, 0, 0, 0, 0);  
+	v1 = (unsigned __int8)type;  
+	v2 = 0;  
+	do  
+		v2 += *(DWORD *)VolumeNameBuffer * v1--;  
+	while (v1);  
+	*(DWORD *)VolumeNameBuffer = v2;  
+	return v2 ^ 2038068563;  
+}  
