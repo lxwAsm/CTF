@@ -80,7 +80,7 @@ for (int j = 0; buffer[j] != 0; j++){
 printf("\ndone");  
 system("pause");  
 
-### CrackHead.exe
+# CrackHead.exe
 DWORD	init_key(){  
 &nbsp;&nbsp;&nbsp;&nbsp;unsigned int type;  
 &nbsp;&nbsp;&nbsp;&nbsp;unsigned __int8 v1,v2;  
