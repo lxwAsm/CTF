@@ -164,3 +164,23 @@ DWORD	init_key(){
 &nbsp;&nbsp;&nbsp;&nbsp;*(DWORD *)VolumeNameBuffer = v2;  
 &nbsp;&nbsp;&nbsp;&nbsp;return v2 ^ 2038068563;  
 }  
+
+### 宛若游龙 
+import string  
+name = 'HardCodeD'  
+buf = []  
+for j in range(len(name)):  
+&nbsp;&nbsp;&nbsp;&nbsp;t = ord(name[j]) % 10 ^ j;  
+&nbsp;&nbsp;&nbsp;&nbsp;cipher = t + 2;  
+&nbsp;&nbsp;&nbsp;&nbsp;if (10 < cipher):  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cipher = t - 8  
+&nbsp;&nbsp;&nbsp;&nbsp;buf.append(cipher)  
+print(buf)  
+for i in buf:  
+&nbsp;&nbsp;&nbsp;&nbsp;for j in string.printable:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ord(j)%10==i:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(j,end='')  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break  
+&nbsp;&nbsp;&nbsp;&nbsp;else:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(i,'not found')  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit(0)  
